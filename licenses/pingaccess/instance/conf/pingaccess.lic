@@ -1,0 +1,13 @@
+ID=1566998
+Organization=Ping Identity Corporation (master)
+Product=PingAccess
+Version=6.0
+IssueDate=2020-01-21
+EnforcementType=3
+ExpirationDate=2020-07-5
+Tier=Subscription
+SaasProvisioning=true
+WSTrustSTS=true
+OAuth=true
+SignCode=FF07
+Signature=302D021500830A11D124B707CBC59B4D737CEDF76CE14A624E0214640A2265FB86F6075820D8B92580E27AE47D07CF
