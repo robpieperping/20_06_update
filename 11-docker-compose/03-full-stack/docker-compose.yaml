@@ -5,7 +5,7 @@ services:
   pingdirectory:
     image: pingidentity/pingdirectory:2006
     environment:
-      - SERVER_PROFILE_URL=https://github.com/robpieperping/20_06_update.git
+      - SERVER_PROFILE_URL=https://github.com/robpieperping/pingidentity-server-profiles.git
       - SERVER_PROFILE_PATH=baseline/pingdirectory
       - SERVER_PROFILE_PARENT=LICENSE
       - SERVER_PROFILE_LICENSE_URL=https://github.com/robpieperping/20_06_update.git
