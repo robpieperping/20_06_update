@@ -3,12 +3,12 @@ version: "3.1"
 services:
 
   pingdirectory:
-    image: pingidentity/pingdirectory:1912
+    image: pingidentity/pingdirectory:2006
     environment:
-      - SERVER_PROFILE_URL=https://github.com/robpieperping/Demo.git
+      - SERVER_PROFILE_URL=https://github.com/robpieperping/20_06_update.git
       - SERVER_PROFILE_PATH=baseline/pingdirectory
       - SERVER_PROFILE_PARENT=LICENSE
-      - SERVER_PROFILE_LICENSE_URL=https://github.com/robpieperping/Demo.git
+      - SERVER_PROFILE_LICENSE_URL=https://github.com/robpieperping/20_06_update.git
       - SERVER_PROFILE_LICENSE_PATH=licenses/pingdirectory
       # - VERBOSE=true
     ports:
@@ -19,13 +19,13 @@ services:
       - pingnet-internal
 
   pingaccess:
-    image: pingidentity/pingaccess:1908
+    image: pingidentity/pingaccess:2006
     command: wait-for pingfederate:9031 -t 420 -- entrypoint.sh start-server
     environment:
-      - SERVER_PROFILE_URL=https://github.com/robpieperping/Demo.git
+      - SERVER_PROFILE_URL=https://github.com/robpieperping/20_06_update.git
       - SERVER_PROFILE_PATH=baseline/pingaccess
       - SERVER_PROFILE_PARENT=LICENSE
-      - SERVER_PROFILE_LICENSE_URL=https://github.com/robpieperping/Demo.git
+      - SERVER_PROFILE_LICENSE_URL=https://github.com/robpieperping/20_06_update.git
       - SERVER_PROFILE_LICENSE_PATH=licenses/pingaccess
     ports:
       - 443:443
@@ -35,13 +35,13 @@ services:
       - pingnet-dmz
 
   pingfederate:
-    image: pingidentity/pingfederate:1908
+    image: pingidentity/pingfederate:2006
     command: wait-for pingdirectory:389 -t 300 -- entrypoint.sh start-server
     environment:
-      - SERVER_PROFILE_URL=https://github.com/robpieperping/Demo.git
+      - SERVER_PROFILE_URL=https://github.com/robpieperping/20_06_update.git
       - SERVER_PROFILE_PATH=baseline/pingfederate
       - SERVER_PROFILE_PARENT=LICENSE
-      - SERVER_PROFILE_LICENSE_URL=https://github.com/robpieperping/Demo.git
+      - SERVER_PROFILE_LICENSE_URL=https://github.com/robpieperping/20_06_update.git
       - SERVER_PROFILE_LICENSE_PATH=licenses/pingfederate
     ports:
       - 9031:9031
@@ -55,7 +55,7 @@ services:
 
 
   pingdataconsole:
-    image: pingidentity/pingdataconsole:1908
+    image: pingidentity/pingdataconsole:2006
     ports:
       - 8080:8080
       - 8443:8443
